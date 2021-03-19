@@ -47,7 +47,7 @@ const Article = ({ data }) => {
   const [comments, setComments] = useState([]);
 
   const fetchAllComments = () => {
-    fetch("http://localhost:1337/commentaires?article=" + article.strapiId)
+    fetch("https://backend-strapi-blog.herokuapp.com/commentaires?article=" + article.strapiId)
       .then(res=>res.json())
       .then( data => {
         const listCommentaires = data.map(leCommentaire=>{
@@ -76,7 +76,7 @@ const Article = ({ data }) => {
       article: article.strapiId
     };
 
-    fetch("http://localhost:1337/commentaires",{
+    fetch("https://backend-strapi-blog.herokuapp.com/commentaires",{
       method: "POST",
       headers: {
         "content-type": "application/json"
